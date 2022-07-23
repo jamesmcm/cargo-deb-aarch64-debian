@@ -2,7 +2,7 @@
 
 Provides a build environment for executing `cargo deb` [1] and producing statically linked binaries for the built Debian (`.deb`) package.
 
-This build on a `debian:buster` base image and targets `armv5te-unknown-linux-musleabi`. The `musl` installation is possible thanks to the cross project [2].
+This build on a `debian:buster` base image and targets `aarch64-unknown-linux-musl`. The `musl` installation is possible thanks to the cross project [2].
 
 The interface for this package was inspired/copied from the cargo-static-build [3] action.
 

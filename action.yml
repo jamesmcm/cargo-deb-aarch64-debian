@@ -1,0 +1,16 @@
+# action.yml
+name: 'Rust Cargo Deb Package Build (aarch64, Debian)'
+description: 'Builds a debian package using cargo deb for Rust packages, statically linked (musl), targeting ARMv8'
+branding:
+  icon: 'package'
+  color: 'orange'
+inputs:
+  cmd:
+    description: 'build command'
+    required: true
+    default: 'cargo deb --target=aarch64-unknown-linux-musl'
+runs:
+  using: 'docker'
+  image: 'docker://jamesmcm03/cargo-deb-aarch64-debian:20220723'
+  args:
+    - ${{ inputs.cmd }}

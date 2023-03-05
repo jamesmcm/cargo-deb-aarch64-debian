@@ -11,6 +11,6 @@ inputs:
     default: 'cargo deb --target=aarch64-unknown-linux-musl'
 runs:
   using: 'docker'
-  image: 'docker://jamesmcm03/cargo-deb-aarch64-debian:20220723'
+  image: 'docker://jamesmcm03/cargo-deb-aarch64-debian:20230305'
   args:
     - ${{ inputs.cmd }}

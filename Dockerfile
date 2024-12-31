@@ -1,6 +1,8 @@
 FROM debian:latest
 
 RUN apt-get update && apt-get install -y \
+  ca-certificates \
+  build-essential \
   curl \
   musl-dev \
   musl-tools \
@@ -12,7 +14,6 @@ RUN apt-get update && apt-get install -y \
   g++ \
   gcc-aarch64-linux-gnu
 
-RUN apt-get install ca-certificates
 # Install rust using rustup
 RUN curl -k "https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init" -o rustup-init && \
     chmod +x rustup-init && \

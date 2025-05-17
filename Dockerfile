@@ -27,6 +27,8 @@ RUN rustup target add aarch64-unknown-linux-musl
 RUN cargo install cargo-deb 
 
 # This musl section copied from rust-embedded/cross, see musl.sh for license
+COPY common.sh lib.sh /
+RUN /common.sh
 COPY musl.sh /
 RUN /musl.sh \
     TARGET=aarch64-linux-musl
